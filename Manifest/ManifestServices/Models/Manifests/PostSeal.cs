@@ -22,8 +22,7 @@ namespace ManifestResource.Models.Manifests
         public DateTime? CreatedOn { get; set; }
 
         public DateTime? UpdatedOn { get; set; }
-
-        [Required(ErrorMessage = "ManifestId is required")]
+        
         public Guid ManifestId { get; set; }
         public SealStatus SealStatus { get; set; }
 

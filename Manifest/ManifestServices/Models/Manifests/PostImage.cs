@@ -14,8 +14,7 @@ namespace ManifestResource.Models.Manifests
 
         [Required(ErrorMessage ="File is required.")]
         public string File { get; set; }
-
-        [Required(ErrorMessage ="Seal ID is required.")]
+                
         public Guid SealId { get; set; }
 
         public DateTime? CreatedOn { get; set; }
