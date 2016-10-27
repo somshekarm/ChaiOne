@@ -1,6 +1,7 @@
 ﻿using ManifestModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,12 @@ namespace ManifestResource.Models.Manifests
     public class PostImage
     {
         public Guid ID { get; set; }        
+
+        [Required(ErrorMessage ="File is required.")]
         public string File { get; set; }
+
+        [Required(ErrorMessage ="Seal ID is required.")]
+        public Guid SealId { get; set; }
 
         public DateTime? CreatedOn { get; set; }
 
