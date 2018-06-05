@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201610270338020_ManifestUnitOfWork.Designer.cs">
       <DependentUpon>201610270338020_ManifestUnitOfWork.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806051111303_appServerChanges.cs" />
+    <Compile Include="Migrations\201806051111303_appServerChanges.Designer.cs">
+      <DependentUpon>201806051111303_appServerChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,6 +79,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610270338020_ManifestUnitOfWork.resx">
       <DependentUpon>201610270338020_ManifestUnitOfWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806051111303_appServerChanges.resx">
+      <DependentUpon>201806051111303_appServerChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
