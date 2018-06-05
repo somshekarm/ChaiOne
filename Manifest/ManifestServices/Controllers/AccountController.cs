@@ -19,6 +19,9 @@ using ManifestResource.Results;
 
 namespace ManifestResource.Controllers
 {
+    /// <summary>
+    /// Account Controller
+    /// </summary>
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
@@ -49,9 +52,12 @@ namespace ManifestResource.Controllers
             }
         }
 
-        public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
+        public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }        
 
-        // GET api/Account/UserInfo
+        /// <summary>
+        /// GET api/Account/UserInfo
+        /// </summary>
+        /// <returns></returns>
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
         public UserInfoViewModel GetUserInfo()
@@ -66,7 +72,11 @@ namespace ManifestResource.Controllers
             };
         }
 
-        // POST api/Account/Logout
+
+        /// <summary>
+        /// POST api/Account/Logout
+        /// </summary>
+        /// <returns></returns>
         [Route("Logout")]
         public IHttpActionResult Logout()
         {
@@ -74,7 +84,13 @@ namespace ManifestResource.Controllers
             return Ok();
         }
 
-        // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
+
+        /// <summary>
+        /// GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
+        /// </summary>
+        /// <param name="returnUrl"></param>
+        /// <param name="generateState"></param>
+        /// <returns></returns>
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
@@ -114,7 +130,12 @@ namespace ManifestResource.Controllers
             };
         }
 
-        // POST api/Account/ChangePassword
+
+        /// <summary>
+        /// POST api/Account/ChangePassword
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {
@@ -134,7 +155,12 @@ namespace ManifestResource.Controllers
             return Ok();
         }
 
-        // POST api/Account/SetPassword
+
+        /// <summary>
+        /// POST api/Account/SetPassword
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [Route("SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
@@ -153,7 +179,12 @@ namespace ManifestResource.Controllers
             return Ok();
         }
 
-        // POST api/Account/AddExternalLogin
+
+        /// <summary>
+        /// POST api/Account/AddExternalLogin
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [Route("AddExternalLogin")]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
         {
@@ -191,7 +222,12 @@ namespace ManifestResource.Controllers
             return Ok();
         }
 
-        // POST api/Account/RemoveLogin
+
+        /// <summary>
+        /// POST api/Account/RemoveLogin
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [Route("RemoveLogin")]
         public async Task<IHttpActionResult> RemoveLogin(RemoveLoginBindingModel model)
         {
@@ -220,7 +256,13 @@ namespace ManifestResource.Controllers
             return Ok();
         }
 
-        // GET api/Account/ExternalLogin
+
+        /// <summary>
+        /// GET api/Account/ExternalLogin
+        /// </summary>
+        /// <param name="provider"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
@@ -277,7 +319,13 @@ namespace ManifestResource.Controllers
             return Ok();
         }
 
-        // GET api/Account/ExternalLogins?returnUrl=%2F&generateState=true
+
+        /// <summary>
+        /// GET api/Account/ExternalLogins?returnUrl=%2F&generateState=true
+        /// </summary>
+        /// <param name="returnUrl"></param>
+        /// <param name="generateState"></param>
+        /// <returns></returns>
         [AllowAnonymous]
         [Route("ExternalLogins")]
         public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
@@ -318,7 +366,12 @@ namespace ManifestResource.Controllers
             return logins;
         }
 
-        // POST api/Account/Register
+
+        /// <summary>
+        /// POST api/Account/Register
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [AllowAnonymous]
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
@@ -340,7 +393,12 @@ namespace ManifestResource.Controllers
             return Ok();
         }
 
-        // POST api/Account/RegisterExternal
+
+        /// <summary>
+        /// POST api/Account/RegisterExternal 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("RegisterExternal")]

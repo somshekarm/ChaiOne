@@ -481,6 +481,75 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:ManifestResource.Controllers.AccountController">
+            <summary>
+            Account Controller
+            </summary>
+        </member>
+        <member name="M:ManifestResource.Controllers.AccountController.GetUserInfo">
+            <summary>
+            GET api/Account/UserInfo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ManifestResource.Controllers.AccountController.Logout">
+            <summary>
+            POST api/Account/Logout
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ManifestResource.Controllers.AccountController.GetManageInfo(System.String,System.Boolean)" -->
+        <member name="M:ManifestResource.Controllers.AccountController.ChangePassword(ManifestResource.Models.ChangePasswordBindingModel)">
+            <summary>
+            POST api/Account/ChangePassword
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManifestResource.Controllers.AccountController.SetPassword(ManifestResource.Models.SetPasswordBindingModel)">
+            <summary>
+            POST api/Account/SetPassword
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManifestResource.Controllers.AccountController.AddExternalLogin(ManifestResource.Models.AddExternalLoginBindingModel)">
+            <summary>
+            POST api/Account/AddExternalLogin
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManifestResource.Controllers.AccountController.RemoveLogin(ManifestResource.Models.RemoveLoginBindingModel)">
+            <summary>
+            POST api/Account/RemoveLogin
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManifestResource.Controllers.AccountController.GetExternalLogin(System.String,System.String)">
+            <summary>
+            GET api/Account/ExternalLogin
+            </summary>
+            <param name="provider"></param>
+            <param name="error"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ManifestResource.Controllers.AccountController.GetExternalLogins(System.String,System.Boolean)" -->
+        <member name="M:ManifestResource.Controllers.AccountController.Register(ManifestResource.Models.RegisterBindingModel)">
+            <summary>
+            POST api/Account/Register
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManifestResource.Controllers.AccountController.RegisterExternal(ManifestResource.Models.RegisterExternalBindingModel)">
+            <summary>
+            POST api/Account/RegisterExternal 
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:ManifestResource.Controllers.ManifestsController">
             <summary>
             Web api controller to implement Manifests class.
@@ -559,6 +628,179 @@
             <param name="manifestId">Manifest Id to consider for creating Image object.</param>
             <param name="sealId">Seal Id to consider for creating Image object.</param>
             <returns>HttpResponse with status code</returns>
+        </member>
+        <member name="M:ManifestServices.Controllers.PostmanApiController.#ctor">
+            <summary>
+                Produce [POSTMAN](http://www.getpostman.com) related responses
+            </summary>
+        </member>
+        <member name="M:ManifestServices.Controllers.PostmanApiController.GetPostmanCollection">
+            <summary>
+                Get a postman collection of all visible Api
+                (Get the [POSTMAN](http://www.getpostman.com) chrome extension)
+            </summary>
+            <returns>object describing a POSTMAN collection</returns>
+            <remarks>Get a postman collection of all visible api</remarks>
+        </member>
+        <member name="T:ManifestServices.Controllers.HttpMethodComparator">
+            <summary>
+                Quick comparer for ordering http methods for display
+            </summary>
+        </member>
+        <member name="T:ManifestServices.Controllers.Postman.PostmanCollectionGet">
+            <summary>
+                [Postman](http://getpostman.com) collection representation
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanCollectionGet.Id">
+            <summary>
+                Id of collection
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanCollectionGet.Name">
+            <summary>
+                Name of collection
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanCollectionGet.Timestamp">
+            <summary>
+                Collection generation time
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanCollectionGet.Requests">
+            <summary>
+                Requests associated with the collection
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanCollectionGet.Synced">
+            <summary>
+                **unused always false**
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanCollectionGet.Folders">
+            <summary>
+                folders within the collection
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanCollectionGet.Description">
+            <summary>
+                Description of collection
+            </summary>
+        </member>
+        <member name="T:ManifestServices.Controllers.Postman.PostmanFolderGet">
+            <summary>
+                Object that describes a [Postman](http://getpostman.com) folder
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanFolderGet.Id">
+            <summary>
+                id of the folder
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanFolderGet.Name">
+            <summary>
+                folder name
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanFolderGet.Description">
+            <summary>
+                folder description
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanFolderGet.Order">
+            <summary>
+                ordered list of ids of items in folder
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanFolderGet.CollectionName">
+            <summary>
+                Name of the collection
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanFolderGet.CollectionId">
+            <summary>
+                id of the collection
+            </summary>
+        </member>
+        <member name="T:ManifestServices.Controllers.Postman.PostmanRequestGet">
+            <summary>
+                [Postman](http://getpostman.com) request object
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Id">
+            <summary>
+                id of request
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Headers">
+            <summary>
+                headers associated with the request
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Url">
+            <summary>
+                url of the request
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.PathVariables">
+            <summary>
+                path variables of the request
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Method">
+            <summary>
+                method of request
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Data">
+            <summary>
+                data to be sent with the request
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.DataMode">
+            <summary>
+                data mode of reqeust
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Name">
+            <summary>
+                name of request
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Description">
+            <summary>
+                request description
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.DescriptionFormat">
+            <summary>
+                format of description
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Time">
+            <summary>
+                time that this request object was generated
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Version">
+            <summary>
+                version of the request object
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Responses">
+            <summary>
+                request response
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.CollectionId">
+            <summary>
+                the id of the collection that the request object belongs to
+            </summary>
+        </member>
+        <member name="P:ManifestServices.Controllers.Postman.PostmanRequestGet.Synced">
+            <summary>
+                Synching
+            </summary>
         </member>
     </members>
 </doc>

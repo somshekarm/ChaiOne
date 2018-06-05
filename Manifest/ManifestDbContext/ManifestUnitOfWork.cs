@@ -14,6 +14,8 @@ namespace ManifestDbContext
         public DbSet<Manifest> Manifest { get; set; }           
         public DbSet<Seal> Seal { get; set; }
         public DbSet<Image> Image { get; set; }
+        public DbSet<AppServer> AppServer { get; set; }
+
 
         public ICollection<Manifest> ManifestCollection
         {
@@ -66,9 +68,18 @@ namespace ManifestDbContext
             }
         }
 
+        public void AddAppServer(AppServer appServerDataEntity)
+        {
+            if(appServerDataEntity != null)
+            {
+                AppServer.Add(appServerDataEntity);
+                CompleteWork();
+            }
+        }
+
         public void CompleteWork()  
         {
             SaveChanges();
-        }      
+        }       
     }
 }

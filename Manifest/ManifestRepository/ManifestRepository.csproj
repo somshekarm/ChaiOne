@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppServerRepository.cs" />
+    <Compile Include="IAppServerRepository.cs" />
     <Compile Include="IManifestRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="ManifestRepository.cs" />

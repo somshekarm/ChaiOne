@@ -235,6 +235,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManifestsController.cs" />
+    <Compile Include="Controllers\PostmanApiController.cs" />
+    <Compile Include="Controllers\Postman\PostmanCollection.cs" />
+    <Compile Include="Controllers\Postman\PostmanFolderGet.cs" />
+    <Compile Include="Controllers\Postman\PostmanRequestGet.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
