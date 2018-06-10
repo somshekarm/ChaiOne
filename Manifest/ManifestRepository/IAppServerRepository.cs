@@ -1,9 +1,11 @@
 ﻿using ManifestModels;
+using System.Collections.Generic;
 
 namespace ManifestRepository
 {
-    interface IAppServerRepository : IRepository<AppServer>
+    public interface IAppServerRepository : IRepository<AppServer>
     {
-        void AddAppServer(AppServer appServer);
+        void AddAppServers(List<AppServer> appServer);
+        List<AppServer> GetAppServer();
     }
 }

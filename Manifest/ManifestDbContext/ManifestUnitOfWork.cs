@@ -25,9 +25,22 @@ namespace ManifestDbContext
             }
         }
 
+        public ICollection<AppServer> AppServers
+        {
+            get
+            {
+                return AppServer.ToList();
+            }
+        }
+
         public List<Seal> Seals(Guid manifestId)
         {
             return ManifestCollection.Where(manifest => manifest.ID == manifestId).First().Seals.ToList();
+        }
+
+        public List<AppServer> GetAppServers()
+        {
+            return AppServers.ToList();
         }
 
         public void AddManifest(Manifest manifestDataEntity)
@@ -68,13 +81,18 @@ namespace ManifestDbContext
             }
         }
 
-        public void AddAppServer(AppServer appServerDataEntity)
+        public void AddAppServers(List<AppServer> appServerDataEntity)
         {
-            if(appServerDataEntity != null)
+            if(appServerDataEntity != null && appServerDataEntity.Count > 0)
             {
-                AppServer.Add(appServerDataEntity);
-                CompleteWork();
+                foreach(var appserver in appServerDataEntity)
+                {
+                    AppServer.Add(appserver);
+                }                    
             }
+
+            CompleteWork();
+
         }
 
         public void CompleteWork()  

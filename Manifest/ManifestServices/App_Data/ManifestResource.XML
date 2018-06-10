@@ -629,6 +629,13 @@
             <param name="sealId">Seal Id to consider for creating Image object.</param>
             <returns>HttpResponse with status code</returns>
         </member>
+        <member name="M:ManifestServices.Controllers.AppServerController.PostAppServer(System.Collections.Generic.List{ManifestServices.Models.AppServerModel})">
+            <summary>
+            Creates AppServer
+            </summary>
+            <param name="appserverModels">Name of the AppServer.</param>
+            <returns></returns>
+        </member>
         <member name="M:ManifestServices.Controllers.PostmanApiController.#ctor">
             <summary>
                 Produce [POSTMAN](http://www.getpostman.com) related responses

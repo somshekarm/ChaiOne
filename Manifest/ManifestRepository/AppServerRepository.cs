@@ -1,5 +1,7 @@
 ﻿using ManifestDbContext;
 using ManifestModels;
+using System.Collections.Generic;
+using System;
 
 namespace ManifestRepository
 {
@@ -12,9 +14,14 @@ namespace ManifestRepository
             this.manifestUnitOfWork = manifestUnitofWork;
         }
 
-        public void AddAppServer(AppServer appServer)
+        public void AddAppServers(List<AppServer> appServers)
         {
-            this.manifestUnitOfWork.AddAppServer(appServer);
+            this.manifestUnitOfWork.AddAppServers(appServers);
+        }
+
+        public List<AppServer> GetAppServer()
+        {
+            return manifestUnitOfWork.GetAppServers();
         }
     }
 }

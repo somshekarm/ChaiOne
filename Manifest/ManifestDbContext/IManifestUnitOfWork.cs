@@ -17,9 +17,11 @@ namespace ManifestDbContext
         void AddManifest(Manifest manifestDataEntity);
         void AddSeal(Seal sealDataEntity);
 
-        void AddAppServer(AppServer appServer);
+        void AddAppServers(List<AppServer> appServers);
         void CompleteWork();
-        List<Seal> Seals(Guid manifestId);        
+        List<Seal> Seals(Guid manifestId);
+        List<AppServer> GetAppServers();        
+          
         void UpdateManifest(Manifest oldManifest, Manifest latestManifest);
         void UpdateSeal(Seal oldSeal, Seal latestSeal);
     }
